@@ -1,0 +1,10 @@
+C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\bin\Debug\AgendaSMS.exe.config
+C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\bin\Debug\AgendaSMS.exe
+C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\bin\Debug\AgendaSMS.pdb
+C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.csprojAssemblyReference.cache
+C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.Properties.Resources.resources
+C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.csproj.GenerateResource.cache
+C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.csproj.CoreCompileInputs.cache
+C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.exe
+C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.pdb
+C:\Users\Felix\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.Form_Usuario.resources
