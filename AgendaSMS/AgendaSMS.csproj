@@ -76,6 +76,12 @@
     <Compile Include="telaNovoContato.Designer.cs">
       <DependentUpon>telaNovoContato.cs</DependentUpon>
     </Compile>
+    <Compile Include="telaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaUsuario.Designer.cs">
+      <DependentUpon>telaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="telaVisualizarContato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telaContatos.resx">
       <DependentUpon>telaContatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaUsuario.resx">
+      <DependentUpon>telaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telaVisualizarContato.resx">
       <DependentUpon>telaVisualizarContato.cs</DependentUpon>
