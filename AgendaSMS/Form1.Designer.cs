@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Usuario));
             this.textBox_Usuario = new System.Windows.Forms.TextBox();
             this.textBox_Senha = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -95,7 +96,7 @@
             this.button_Sair.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_Sair.AutoSize = true;
             this.button_Sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Sair.Image = global::AgendaSMS.Properties.Resources.sair2;
+            this.button_Sair.Image = ((System.Drawing.Image)(resources.GetObject("button_Sair.Image")));
             this.button_Sair.Location = new System.Drawing.Point(232, 93);
             this.button_Sair.Name = "button_Sair";
             this.button_Sair.Size = new System.Drawing.Size(99, 27);
@@ -110,7 +111,7 @@
             this.button_Acessar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_Acessar.AutoSize = true;
             this.button_Acessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Acessar.Image = global::AgendaSMS.Properties.Resources.chave;
+            this.button_Acessar.Image = ((System.Drawing.Image)(resources.GetObject("button_Acessar.Image")));
             this.button_Acessar.Location = new System.Drawing.Point(126, 93);
             this.button_Acessar.Name = "button_Acessar";
             this.button_Acessar.Size = new System.Drawing.Size(100, 27);

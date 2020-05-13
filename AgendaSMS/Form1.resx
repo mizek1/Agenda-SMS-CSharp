@@ -120,4 +120,32 @@
   <metadata name="toolTip_Usuario.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_Sair.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk02AwAAAAAAADYAAAAoAAAAEAAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////aGtp
+        VFhWVVlXVlpYVlpYVlpYVlpYV1tZV1tZV1tZV1tZV1tZVlpYiouL7e3tU1dVw8PDl5iYkJOSu8G+wcbD
+        w8jGw8nGxMnGxMnGxMnGxMnGxMnGwcfFX2Nh6enpU1dVvr6+q6urr6+vhYaFi4+NxcnH0tbU1dnX1trY
+        19vZhojFQ0W21NjWcXVz4ODgU1dVvr6+qqqqqampoaGhmZmZb29viIqJ0NLQ4+Xka2zEERGsDAyp5Obl
+        hoiH2dnZU1dVvr6+qqqqpaWlnZ2dlZWVj4+PgoKCXl9kSEm7Gxu1NTXTBASmHh6wExSlOjqbU1dVvr6+
+        qqqqo6OjmpqakpKSiYmJeXmGJCWsJCS8ODjWQUHZOjrUPDzSPT3SAgKkU1dVvr6+qampoaGhmJiYj4+P
+        c3OLDg6iLS3ENjbXCAjODAzODAzODg7PUVHcAwOkU1dVvr6+p6ennp6elpaWjY2NFhahNjbFVlbdLS3V
+        JSXTGhrREBDPGxvSbm7iBgalU1dVvr6+pKSknJyck5OTi4uLZGSKERGmXl7VaWnhSEjbSkrbTEzbTU3b
+        jY3oBQWlU1dVvr6+oqKimpqakZGRiIiIgICAamp+ISGwZWXSiIjnjo7olZXqlpbqmprrAwOkU1dVvb29
+        oKCgl5eXj4+PhoaGfn5+dnZ24ePsPDy5YWHNp6fsMDC8KCi3ISKxBweiU1dVu7u7nZ2dlJSUiYmJf39/
+        dnZ2cHBw7vDw7/HzZWXHUVHEFRWs09TtiImiv7/DU1dVurq6lZWViYmJfn5+dXV1bm5uaGho7u/v8vT0
+        +fn5kpLXPj68+vr6oaOi0NDQU1dVra2tjIyMf39/dXV1bGxsZGRkYGBg7e/v8vPz9/j4+vv7+/v7+fn5
+        mJua0tLSU1dVpqamhYWFeXl5bm5uZWVlXV1dWVlZ7e/v7/Hx8/T09fb29fb27O7tfYF/29vb////U1dV
+        U1dVU1dVU1dVU1dVU1dVU1dVVFhWWl5cYmVkZmloZ2poY2dli4uL6urq
+</value>
+  </data>
+  <data name="button_Acessar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AAAAAAAAAHYAAAAoAAAAEAAAABAAAAABAAQAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAA/wAA
+        gP8AgAD/AICA/4AAAP+AAID/gIAA/4CAgP/AwMD/AAD//wD/AP8A/////wAA//8A/////wD//////3d4
+        iIj/////d4eP//////94eHj//////3eHh4///////394eP//////d/eHh3eP///4f3h4iHj///93iIiI
+        h/////eIiIiIf///94iIiHiI///3+IiHh4f///f4iH93f///+I+H93f/////h/h4f//////4f4f/////
+        //+Hf///
+</value>
+  </data>
 </root>
