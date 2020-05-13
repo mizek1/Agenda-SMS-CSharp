@@ -8,3 +8,14 @@ C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.cspr
 C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.exe
 C:\Users\Felix\Source\Repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.pdb
 C:\Users\Felix\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.Form_Usuario.resources
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\bin\Debug\AgendaSMS.exe.config
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\bin\Debug\AgendaSMS.exe
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\bin\Debug\AgendaSMS.pdb
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.csprojAssemblyReference.cache
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.Form_Usuario.resources
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.Properties.Resources.resources
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaPrincipal.resources
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.csproj.GenerateResource.cache
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.csproj.CoreCompileInputs.cache
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.exe
+C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.pdb
