@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="telaConversas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConversas.Designer.cs">
+      <DependentUpon>telaConversas.cs</DependentUpon>
+    </Compile>
     <Compile Include="telaAlterarContato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telaAlterarContato.resx">
       <DependentUpon>telaAlterarContato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConversas.resx">
+      <DependentUpon>telaConversas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telaNovoContato.resx">
       <DependentUpon>telaNovoContato.cs</DependentUpon>
