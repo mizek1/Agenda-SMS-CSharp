@@ -24,6 +24,9 @@ namespace AgendaSMS
                 if (textBox_Senha.Text == "123456")
                 {
                     MessageBox.Show("Parabéns! Acesso liberado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    telaContatos telaContatos1 = new telaContatos();
+                    this.Hide();
+                    telaContatos1.ShowDialog();
                 }
                 else
                 {

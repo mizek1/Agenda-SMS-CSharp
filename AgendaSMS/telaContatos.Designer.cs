@@ -81,25 +81,25 @@
             // novoContatoToolStripMenuItem
             // 
             this.novoContatoToolStripMenuItem.Name = "novoContatoToolStripMenuItem";
-            this.novoContatoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.novoContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoContatoToolStripMenuItem.Text = "Novo contato";
             // 
             // listarContatosToolStripMenuItem
             // 
             this.listarContatosToolStripMenuItem.Name = "listarContatosToolStripMenuItem";
-            this.listarContatosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.listarContatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarContatosToolStripMenuItem.Text = "Listar contatos";
             // 
             // alterarContatoToolStripMenuItem
             // 
             this.alterarContatoToolStripMenuItem.Name = "alterarContatoToolStripMenuItem";
-            this.alterarContatoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.alterarContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alterarContatoToolStripMenuItem.Text = "Alterar contato";
             // 
             // excluirContatoToolStripMenuItem
             // 
             this.excluirContatoToolStripMenuItem.Name = "excluirContatoToolStripMenuItem";
-            this.excluirContatoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.excluirContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirContatoToolStripMenuItem.Text = "Excluir contato";
             // 
             // conversasToolStripMenuItem
@@ -228,7 +228,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.35516F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.64484F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 124);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
