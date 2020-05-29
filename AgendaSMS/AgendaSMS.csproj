@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="conexaoBanco_Singleton.cs" />
     <Compile Include="telaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
