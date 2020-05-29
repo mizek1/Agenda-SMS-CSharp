@@ -12,6 +12,9 @@ namespace AgendaSMS
     {
         private static conexaoBanco_Singleton _instance;
         private OdbcConnection cnDB;
+        private static DataSet dsDB = new DataSet();
+        private static OdbcDataAdapter adDB = new OdbcDataAdapter();
+        private static OdbcCommandBuilder cbDB = new OdbcCommandBuilder(adDB);
 
         private conexaoBanco_Singleton()
         {
@@ -43,11 +46,16 @@ namespace AgendaSMS
             return _instance;
         }
 
+        public int numeroRegistros(String _pesquisa)
+        {
+            adDB.SelectCommand = new OdbcCommand("select id from "+_pesquisa, cnDB);
+            adDB.Fill(dsDB);
+            int registros = dsDB.Tables[0].Rows.Count;
+            adDB.Dispose();
+            return registros;
+        }
         public void testeSelect()
         {
-            DataSet dsDB = new DataSet();
-            OdbcDataAdapter adDB = new OdbcDataAdapter();
-            OdbcCommandBuilder cbDB = new OdbcCommandBuilder(adDB);
             adDB.SelectCommand = new OdbcCommand(
                                      "SELECT * FROM contato",
                                      cnDB);

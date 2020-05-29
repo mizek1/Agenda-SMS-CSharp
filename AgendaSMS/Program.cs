@@ -16,13 +16,9 @@ namespace AgendaSMS
         [STAThread]
         static void Main()
         {
-            conexaoBanco_Singleton conexao = conexaoBanco_Singleton.getInstance();
-            conexao.testeSelect();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form_Usuario());
-
         }
     }
 }
