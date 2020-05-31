@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace AgendaSMS
 {
@@ -19,28 +20,26 @@ namespace AgendaSMS
 
         private void button_Acessar_Click(object sender, EventArgs e)
         {
-            if (textBox_Usuario.Text == "admin")
+            if ((! String.IsNullOrWhiteSpace(textBox_Usuario.Text)) && 
+                (! String.IsNullOrWhiteSpace(textBox_Senha.Text)) && 
+                (validarCredenciais(textBox_Usuario.Text, textBox_Senha.Text)))
             {
-                if (textBox_Senha.Text == "123456")
-                {
-                    MessageBox.Show("Parabéns! Acesso liberado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     telaContatos telaContatos = new telaContatos();
                     this.Hide();
                     telaContatos.ShowDialog();
-                }
-                else
-                {
-                    textBox_Senha.Focus();
-                    MessageBox.Show("Senha incorreta. Tente: 123456", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
             }
             else
             {
                 textBox_Usuario.Focus();
-                MessageBox.Show("Usuário inválido. Tente: admin", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Usuário ou senha inválidos.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        private bool validarCredenciais(String _usuario, String _senha)
+        {
+            conexaoBanco_Singleton conexao = conexaoBanco_Singleton.getInstance();
+            return conexao.numeroRegistros("usuario where usuario = \'" + _usuario + "\' and senha = \'" + _senha + "\'") > 0;
+        }
         private void button_Sair_Click(object sender, EventArgs e) => Close();
 
         private void textBox_Usuario_Enter(object sender, EventArgs e)

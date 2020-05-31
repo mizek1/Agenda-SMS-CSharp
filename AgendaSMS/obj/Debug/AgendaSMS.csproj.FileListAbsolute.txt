@@ -25,3 +25,10 @@ C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaS
 C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaContatos.resources
 C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaUsuario.resources
 C:\Users\Danilo Alves\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaVisualizarContato.resources
+C:\Users\Felix\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaAlterarContato.resources
+C:\Users\Felix\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaConversas.resources
+C:\Users\Felix\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaHistorico.resources
+C:\Users\Felix\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaNovoContato.resources
+C:\Users\Felix\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaContatos.resources
+C:\Users\Felix\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaUsuario.resources
+C:\Users\Felix\source\repos\Agenda-SMS-CSharp\AgendaSMS\obj\Debug\AgendaSMS.telaVisualizarContato.resources
