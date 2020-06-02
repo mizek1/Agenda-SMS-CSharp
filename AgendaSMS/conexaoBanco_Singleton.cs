@@ -12,9 +12,9 @@ namespace AgendaSMS
     {
         private static conexaoBanco_Singleton _instance;
         private OdbcConnection cnDB;
-        private static DataSet dsDB = new DataSet();
         private static OdbcDataAdapter adDB = new OdbcDataAdapter();
-        private static OdbcCommandBuilder cbDB = new OdbcCommandBuilder(adDB);
+//        private static OdbcCommandBuilder cbDB = new OdbcCommandBuilder(adDB);
+        private static DataSet dsDB = new DataSet();
 
         private conexaoBanco_Singleton()
         {
@@ -46,7 +46,7 @@ namespace AgendaSMS
             return _instance;
         }
 
-        public bool loginBanco(String _usuario, String _senha)
+        public int loginBanco(String _usuario, String _senha)
         {
 
             adDB.SelectCommand = new OdbcCommand("select id from usuario where usuario = ? and senha = ?", cnDB);
@@ -62,10 +62,13 @@ namespace AgendaSMS
             adDB.SelectCommand.Parameters.Add(param2);
 
             adDB.Fill(dsDB);
-            int registros = dsDB.Tables[0].Rows.Count;
+            int id_usuario = dsDB.Tables[0].Rows[0].Field("id").Value.ToInt();
+//            int registros = dsDB.Tables[0].Rows.Count;
+//            dsDB.Tables[0].Rows[0]["data"];
+
             adDB.Dispose();
 
-            return (registros > 0);
+            return (id_usuario);
         }
 
         public int numeroRegistros(String _pesquisa)

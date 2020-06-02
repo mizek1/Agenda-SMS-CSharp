@@ -12,8 +12,10 @@ namespace AgendaSMS
 {
     public partial class telaContatos : Form
     {
-        public telaContatos()
+        private int id_usuario;
+        public telaContatos(int id_usuario)
         {
+            this.id_usuario = id_usuario;
             InitializeComponent();
         }
 
@@ -64,6 +66,16 @@ namespace AgendaSMS
         {
             telaUsuario telaUsuario = new telaUsuario();
             telaUsuario.ShowDialog();
+        }
+
+        private void btnVisualizarContato_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telaContatos_Load(object sender, EventArgs e)
+        {
+            // parei aki
         }
     }
 }
