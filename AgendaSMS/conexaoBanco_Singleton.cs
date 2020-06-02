@@ -46,6 +46,28 @@ namespace AgendaSMS
             return _instance;
         }
 
+        public bool loginBanco(String _usuario, String _senha)
+        {
+
+            adDB.SelectCommand = new OdbcCommand("select id from usuario where usuario = ? and senha = ?", cnDB);
+
+            OdbcParameter param1 = new OdbcParameter();
+            param1.DbType = DbType.String;
+            param1.Value = _usuario;
+            adDB.SelectCommand.Parameters.Add(param1);
+
+            OdbcParameter param2 = new OdbcParameter();
+            param2.DbType = DbType.String;
+            param2.Value = _senha;
+            adDB.SelectCommand.Parameters.Add(param2);
+
+            adDB.Fill(dsDB);
+            int registros = dsDB.Tables[0].Rows.Count;
+            adDB.Dispose();
+
+            return (registros > 0);
+        }
+
         public int numeroRegistros(String _pesquisa)
         {
             adDB.SelectCommand = new OdbcCommand("select id from "+_pesquisa, cnDB);
