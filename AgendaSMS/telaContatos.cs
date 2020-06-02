@@ -12,10 +12,9 @@ namespace AgendaSMS
 {
     public partial class telaContatos : Form
     {
-        private int id_usuario;
+        usuario_Singleton usuario = usuario_Singleton.getInstance();
         public telaContatos(int id_usuario)
         {
-            this.id_usuario = id_usuario;
             InitializeComponent();
         }
 

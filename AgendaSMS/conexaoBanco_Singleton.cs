@@ -46,10 +46,9 @@ namespace AgendaSMS
             return _instance;
         }
 
-        public int loginBanco(String _usuario, String _senha)
+        public void loginBanco(String _usuario, String _senha)
         {
-
-            adDB.SelectCommand = new OdbcCommand("select id from usuario where usuario = ? and senha = ?", cnDB);
+            adDB.SelectCommand = new OdbcCommand("select id, nome, telefone from usuario where usuario = ? and senha = ?", cnDB);
 
             OdbcParameter param1 = new OdbcParameter();
             param1.DbType = DbType.String;
@@ -62,13 +61,13 @@ namespace AgendaSMS
             adDB.SelectCommand.Parameters.Add(param2);
 
             adDB.Fill(dsDB);
-            int id_usuario = dsDB.Tables[0].Rows[0].Field("id").Value.ToInt();
-//            int registros = dsDB.Tables[0].Rows.Count;
-//            dsDB.Tables[0].Rows[0]["data"];
+
+            usuario_Singleton usuario = usuario_Singleton.getInstance();
+            // salvar informações retornadas na pesquisa no objeto Usuario
+            //            int id_usuario = dsDB.Tables[0].Rows[0].Field("id").Value.ToInt();
+            //            int id_usuario = dsDB.Tables[0].Rows.Count;
 
             adDB.Dispose();
-
-            return (id_usuario);
         }
 
         public int numeroRegistros(String _pesquisa)

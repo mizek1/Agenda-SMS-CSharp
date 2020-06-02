@@ -13,8 +13,6 @@ namespace AgendaSMS
 {
     public partial class Form_Usuario : Form
     {
-        private int id_usuario = 0;
-
         public Form_Usuario()
         {
             InitializeComponent();
@@ -26,7 +24,7 @@ namespace AgendaSMS
                 (! String.IsNullOrWhiteSpace(textBox_Senha.Text)) && 
                 (validarCredenciais(textBox_Usuario.Text, textBox_Senha.Text)))
             {
-                    telaContatos telaContatos = new telaContatos(id_usuario);
+                    telaContatos telaContatos = new telaContatos();
                     this.Hide();
                     telaContatos.ShowDialog();
             }
@@ -40,8 +38,8 @@ namespace AgendaSMS
         private bool validarCredenciais(String _usuario, String _senha)
         {
             conexaoBanco_Singleton conexao = conexaoBanco_Singleton.getInstance();
-            id_usuario = conexao.loginBanco(_usuario, _senha);
-            return (id_usuario > 0);
+            usuario_Singleton usuario = usuario_Singleton.getInstance();
+            return (usuario.Id > 0);
         }
         private void button_Sair_Click(object sender, EventArgs e) => Close();
 
