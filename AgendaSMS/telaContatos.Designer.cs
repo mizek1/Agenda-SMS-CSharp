@@ -84,28 +84,28 @@
             // novoContatoToolStripMenuItem
             // 
             this.novoContatoToolStripMenuItem.Name = "novoContatoToolStripMenuItem";
-            this.novoContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoContatoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.novoContatoToolStripMenuItem.Text = "Novo contato";
             this.novoContatoToolStripMenuItem.Click += new System.EventHandler(this.novoContatoToolStripMenuItem_Click);
             // 
             // listarContatosToolStripMenuItem
             // 
             this.listarContatosToolStripMenuItem.Name = "listarContatosToolStripMenuItem";
-            this.listarContatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarContatosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.listarContatosToolStripMenuItem.Text = "Listar contatos";
             this.listarContatosToolStripMenuItem.Click += new System.EventHandler(this.listarContatosToolStripMenuItem_Click);
             // 
             // alterarContatoToolStripMenuItem
             // 
             this.alterarContatoToolStripMenuItem.Name = "alterarContatoToolStripMenuItem";
-            this.alterarContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarContatoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.alterarContatoToolStripMenuItem.Text = "Alterar contato";
             this.alterarContatoToolStripMenuItem.Click += new System.EventHandler(this.alterarContatoToolStripMenuItem_Click);
             // 
             // excluirContatoToolStripMenuItem
             // 
             this.excluirContatoToolStripMenuItem.Name = "excluirContatoToolStripMenuItem";
-            this.excluirContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirContatoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.excluirContatoToolStripMenuItem.Text = "Excluir contato";
             this.excluirContatoToolStripMenuItem.Click += new System.EventHandler(this.excluirContatoToolStripMenuItem_Click);
             // 
@@ -204,6 +204,7 @@
             this.btnBuscarContato.Text = "Buscar";
             this.btnBuscarContato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarContato.UseVisualStyleBackColor = true;
+            this.btnBuscarContato.Click += new System.EventHandler(this.btnBuscarContato_Click);
             // 
             // txtBusca
             // 

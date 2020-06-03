@@ -10,11 +10,13 @@ namespace AgendaSMS
 {
     class conexaoBanco_Singleton
     {
+        usuario_Singleton usuario = usuario_Singleton.getInstance();
         private static conexaoBanco_Singleton _instance;
         private OdbcConnection cnDB;
         private static OdbcDataAdapter adDB = new OdbcDataAdapter();
 //        private static OdbcCommandBuilder cbDB = new OdbcCommandBuilder(adDB);
         private static DataSet dsDB = new DataSet();
+        private static DataSet dsContatos = new DataSet();
 
         private conexaoBanco_Singleton()
         {
@@ -64,12 +66,31 @@ namespace AgendaSMS
 
             if (dsDB.Tables[0].Rows.Count > 0)
             {
-                usuario_Singleton usuario = usuario_Singleton.getInstance();
-                usuario.Id = Convert.ToInt32(dsDB.Tables[0].Rows[0]["id"].ToString());
+                usuario.Id = Convert.ToInt32(dsDB.Tables[0].Rows[0]["id"]);
                 usuario.Nome = dsDB.Tables[0].Rows[0]["nome"].ToString();
                 usuario.Telefone = dsDB.Tables[0].Rows[0]["telefone"].ToString();
+
+                contatosUsuario(usuario.Id);
             }
             adDB.Dispose();
+        }
+
+        public void contatosUsuario(int _id)
+        {
+            adDB.SelectCommand = new OdbcCommand("select * from vw_contatos where id_usuario = ?", cnDB);
+
+            OdbcParameter param1 = new OdbcParameter();
+            param1.DbType = DbType.String;
+            param1.Value = usuario.Id;
+            adDB.SelectCommand.Parameters.Add(param1);
+
+            adDB.Fill(dsContatos);
+            adDB.Dispose();
+        }
+
+        public DataSet getDsContatos()
+        {
+            return dsContatos;
         }
 
         public int numeroRegistros(String _pesquisa)
@@ -80,28 +101,27 @@ namespace AgendaSMS
             adDB.Dispose();
             return registros;
         }
-        public void testeSelect()
-        {
-            adDB.SelectCommand = new OdbcCommand(
-                                     "SELECT * FROM contato",
-                                     cnDB);
-            adDB.Fill(dsDB);
 
+        // apenas para teste: confirmar que os registros estão vindo do banco corretamente
+        public void conteudoDataSet(DataSet _dataset)
+        {
             // Display the record count
-            Console.WriteLine("Table 'csharptest' contains {0} rows.\n",
-                              dsDB.Tables[0].Rows.Count);
+            Console.WriteLine("Tabela tem {0} linhas.\n", _dataset.Tables[0].Rows.Count);
 
             // List the columns (using a foreach loop)
-            Console.WriteLine("Columns\n=======\n");
-
-            foreach (DataColumn dcDB in dsDB.Tables[0].Columns)
+            Console.WriteLine("Registros\n=======\n");
+            foreach (DataColumn dcDB in _dataset.Tables[0].Columns)
+            {
                 Console.WriteLine("{0} ({1})", dcDB.ColumnName, dcDB.DataType);
+            }
             Console.WriteLine("\n");
 
-            // Iterate through the rows and display the data in the table (using a for loop).
-            // Display the data column last for readability.
-            Console.WriteLine("Data\n====\n");
-            //for (int i = 0; i to continue...");
+            // Conteudo dos registros
+            Console.WriteLine("Dados\n====\n");
+            for (int i = 0; i < _dataset.Tables[0].Rows.Count; i++)
+                foreach (DataColumn dcDB in _dataset.Tables[0].Columns)
+                    Console.WriteLine("{0} ({1}) => {2}", dcDB.ColumnName, dcDB.DataType, _dataset.Tables[0].Rows[i][dcDB.ColumnName]);
+
             Console.Read();
         }
     }

@@ -12,10 +12,17 @@ namespace AgendaSMS
 {
     public partial class telaContatos : Form
     {
+        conexaoBanco_Singleton conexao = conexaoBanco_Singleton.getInstance();
         usuario_Singleton usuario = usuario_Singleton.getInstance();
         public telaContatos()
         {
             InitializeComponent();
+        }
+
+        private void telaContatos_Load(object sender, EventArgs e)
+        {
+            conexao.conteudoDataSet(conexao.getDsContatos());
+            dGrid.DataSource = conexao.getDsContatos();
         }
 
         private void novoContatoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,9 +79,9 @@ namespace AgendaSMS
 
         }
 
-        private void telaContatos_Load(object sender, EventArgs e)
+        private void btnBuscarContato_Click(object sender, EventArgs e)
         {
-            // parei aki
+
         }
     }
 }
