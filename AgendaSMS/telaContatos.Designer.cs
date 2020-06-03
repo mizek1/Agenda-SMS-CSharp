@@ -171,11 +171,14 @@
             // 
             // dGrid
             // 
+            this.dGrid.AllowUserToAddRows = false;
+            this.dGrid.AllowUserToDeleteRows = false;
             this.dGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGrid.Location = new System.Drawing.Point(0, 24);
+            this.dGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dGrid.Location = new System.Drawing.Point(0, 119);
             this.dGrid.Name = "dGrid";
-            this.dGrid.Size = new System.Drawing.Size(521, 311);
+            this.dGrid.ReadOnly = true;
+            this.dGrid.Size = new System.Drawing.Size(521, 206);
             this.dGrid.TabIndex = 9;
             // 
             // panel1
@@ -277,8 +280,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 335);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dGrid);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "telaContatos";
             this.Text = "Contatos";

@@ -14,9 +14,8 @@ namespace AgendaSMS
         private static conexaoBanco_Singleton _instance;
         private OdbcConnection cnDB;
         private static OdbcDataAdapter adDB = new OdbcDataAdapter();
-//        private static OdbcCommandBuilder cbDB = new OdbcCommandBuilder(adDB);
         private static DataSet dsDB = new DataSet();
-        private static DataSet dsContatos = new DataSet();
+        private static DataTable dtContatos = new DataTable();
 
         private conexaoBanco_Singleton()
         {
@@ -70,12 +69,12 @@ namespace AgendaSMS
                 usuario.Nome = dsDB.Tables[0].Rows[0]["nome"].ToString();
                 usuario.Telefone = dsDB.Tables[0].Rows[0]["telefone"].ToString();
 
-                contatosUsuario(usuario.Id);
+                getContatosUsuario(usuario.Id);
             }
             adDB.Dispose();
         }
 
-        public void contatosUsuario(int _id)
+        public void getContatosUsuario(int _id)
         {
             adDB.SelectCommand = new OdbcCommand("select * from vw_contatos where id_usuario = ?", cnDB);
 
@@ -83,17 +82,18 @@ namespace AgendaSMS
             param1.DbType = DbType.String;
             param1.Value = usuario.Id;
             adDB.SelectCommand.Parameters.Add(param1);
+            
+            adDB.Fill(dtContatos);
 
-            adDB.Fill(dsContatos);
             adDB.Dispose();
         }
 
-        public DataSet getDsContatos()
+        public DataTable getDtContatos()
         {
-            return dsContatos;
+            return dtContatos;
         }
 
-        public int numeroRegistros(String _pesquisa)
+        public int getNumeroDeRegistros(String _pesquisa)
         {
             adDB.SelectCommand = new OdbcCommand("select id from "+_pesquisa, cnDB);
             adDB.Fill(dsDB);
@@ -102,27 +102,6 @@ namespace AgendaSMS
             return registros;
         }
 
-        // apenas para teste: confirmar que os registros estão vindo do banco corretamente
-        public void conteudoDataSet(DataSet _dataset)
-        {
-            // Display the record count
-            Console.WriteLine("Tabela tem {0} linhas.\n", _dataset.Tables[0].Rows.Count);
-
-            // List the columns (using a foreach loop)
-            Console.WriteLine("Registros\n=======\n");
-            foreach (DataColumn dcDB in _dataset.Tables[0].Columns)
-            {
-                Console.WriteLine("{0} ({1})", dcDB.ColumnName, dcDB.DataType);
-            }
-            Console.WriteLine("\n");
-
-            // Conteudo dos registros
-            Console.WriteLine("Dados\n====\n");
-            for (int i = 0; i < _dataset.Tables[0].Rows.Count; i++)
-                foreach (DataColumn dcDB in _dataset.Tables[0].Columns)
-                    Console.WriteLine("{0} ({1}) => {2}", dcDB.ColumnName, dcDB.DataType, _dataset.Tables[0].Rows[i][dcDB.ColumnName]);
-
-            Console.Read();
-        }
     }
 }
+

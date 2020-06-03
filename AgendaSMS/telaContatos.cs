@@ -21,8 +21,7 @@ namespace AgendaSMS
 
         private void telaContatos_Load(object sender, EventArgs e)
         {
-            conexao.conteudoDataSet(conexao.getDsContatos());
-            dGrid.DataSource = conexao.getDsContatos();
+            dGrid.DataSource = conexao.getDtContatos();
         }
 
         private void novoContatoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,7 +75,7 @@ namespace AgendaSMS
 
         private void btnVisualizarContato_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnBuscarContato_Click(object sender, EventArgs e)
