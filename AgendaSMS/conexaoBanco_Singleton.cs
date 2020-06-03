@@ -62,11 +62,13 @@ namespace AgendaSMS
 
             adDB.Fill(dsDB);
 
-            usuario_Singleton usuario = usuario_Singleton.getInstance();
-            // salvar informações retornadas na pesquisa no objeto Usuario
-            //            int id_usuario = dsDB.Tables[0].Rows[0].Field("id").Value.ToInt();
-            //            int id_usuario = dsDB.Tables[0].Rows.Count;
-
+            if (dsDB.Tables[0].Rows.Count > 0)
+            {
+                usuario_Singleton usuario = usuario_Singleton.getInstance();
+                usuario.Id = Convert.ToInt32(dsDB.Tables[0].Rows[0]["id"].ToString());
+                usuario.Nome = dsDB.Tables[0].Rows[0]["nome"].ToString();
+                usuario.Telefone = dsDB.Tables[0].Rows[0]["telefone"].ToString();
+            }
             adDB.Dispose();
         }
 
