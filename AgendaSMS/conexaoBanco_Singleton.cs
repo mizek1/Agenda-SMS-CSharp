@@ -10,11 +10,12 @@ namespace AgendaSMS
 {
     class conexaoBanco_Singleton
     {
+        usuario_Singleton usuario = usuario_Singleton.getInstance();
         private static conexaoBanco_Singleton _instance;
         private OdbcConnection cnDB;
-        private static DataSet dsDB = new DataSet();
         private static OdbcDataAdapter adDB = new OdbcDataAdapter();
-        private static OdbcCommandBuilder cbDB = new OdbcCommandBuilder(adDB);
+        private static DataSet dsDB = new DataSet();
+        private static DataTable dtContatos = new DataTable();
 
         private conexaoBanco_Singleton()
         {
@@ -46,10 +47,9 @@ namespace AgendaSMS
             return _instance;
         }
 
-        public bool loginBanco(String _usuario, String _senha)
+        public void loginBanco(String _usuario, String _senha)
         {
-
-            adDB.SelectCommand = new OdbcCommand("select id from usuario where usuario = ? and senha = ?", cnDB);
+            adDB.SelectCommand = new OdbcCommand("select id, nome, telefone from usuario where usuario = ? and senha = ?", cnDB);
 
             OdbcParameter param1 = new OdbcParameter();
             param1.DbType = DbType.String;
@@ -62,13 +62,38 @@ namespace AgendaSMS
             adDB.SelectCommand.Parameters.Add(param2);
 
             adDB.Fill(dsDB);
-            int registros = dsDB.Tables[0].Rows.Count;
-            adDB.Dispose();
 
-            return (registros > 0);
+            if (dsDB.Tables[0].Rows.Count > 0)
+            {
+                usuario.Id = Convert.ToInt32(dsDB.Tables[0].Rows[0]["id"]);
+                usuario.Nome = dsDB.Tables[0].Rows[0]["nome"].ToString();
+                usuario.Telefone = dsDB.Tables[0].Rows[0]["telefone"].ToString();
+
+                getContatosUsuario(usuario.Id);
+            }
+            adDB.Dispose();
         }
 
-        public int numeroRegistros(String _pesquisa)
+        public void getContatosUsuario(int _id)
+        {
+            adDB.SelectCommand = new OdbcCommand("select * from vw_contatos where id_usuario = ?", cnDB);
+
+            OdbcParameter param1 = new OdbcParameter();
+            param1.DbType = DbType.String;
+            param1.Value = usuario.Id;
+            adDB.SelectCommand.Parameters.Add(param1);
+            
+            adDB.Fill(dtContatos);
+
+            adDB.Dispose();
+        }
+
+        public DataTable getDtContatos()
+        {
+            return dtContatos;
+        }
+
+        public int getNumeroDeRegistros(String _pesquisa)
         {
             adDB.SelectCommand = new OdbcCommand("select id from "+_pesquisa, cnDB);
             adDB.Fill(dsDB);
@@ -76,29 +101,7 @@ namespace AgendaSMS
             adDB.Dispose();
             return registros;
         }
-        public void testeSelect()
-        {
-            adDB.SelectCommand = new OdbcCommand(
-                                     "SELECT * FROM contato",
-                                     cnDB);
-            adDB.Fill(dsDB);
 
-            // Display the record count
-            Console.WriteLine("Table 'csharptest' contains {0} rows.\n",
-                              dsDB.Tables[0].Rows.Count);
-
-            // List the columns (using a foreach loop)
-            Console.WriteLine("Columns\n=======\n");
-
-            foreach (DataColumn dcDB in dsDB.Tables[0].Columns)
-                Console.WriteLine("{0} ({1})", dcDB.ColumnName, dcDB.DataType);
-            Console.WriteLine("\n");
-
-            // Iterate through the rows and display the data in the table (using a for loop).
-            // Display the data column last for readability.
-            Console.WriteLine("Data\n====\n");
-            //for (int i = 0; i to continue...");
-            Console.Read();
-        }
     }
 }
+

@@ -38,7 +38,9 @@ namespace AgendaSMS
         private bool validarCredenciais(String _usuario, String _senha)
         {
             conexaoBanco_Singleton conexao = conexaoBanco_Singleton.getInstance();
-            return conexao.loginBanco(_usuario, _senha);
+            conexao.loginBanco(_usuario, _senha);
+            usuario_Singleton usuario = usuario_Singleton.getInstance();
+            return (usuario.Id > 0);
         }
         private void button_Sair_Click(object sender, EventArgs e) => Close();
 
