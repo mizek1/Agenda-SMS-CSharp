@@ -32,7 +32,7 @@ namespace AgendaSMS
 
         private void listarContatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Não chama nada pois já está na tela da lista de contatos
+            dGrid.DataSource = conexao.getDtContatos();
         }
 
         private void alterarContatoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,6 +81,12 @@ namespace AgendaSMS
         private void btnBuscarContato_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            telaNovoContato telaNovoContato = new telaNovoContato();
+            telaNovoContato.ShowDialog();
         }
     }
 }

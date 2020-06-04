@@ -97,8 +97,9 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // Form2
+            // telaNovoContato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,7 +110,7 @@
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "telaNovoContato";
             this.Text = "Novo contato";
             this.ResumeLayout(false);
             this.PerformLayout();

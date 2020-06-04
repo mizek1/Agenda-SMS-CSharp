@@ -240,6 +240,7 @@
             this.button1.Text = "Novo";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAlterarContato
             // 
@@ -279,7 +280,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 335);
+            this.ClientSize = new System.Drawing.Size(521, 330);
             this.Controls.Add(this.dGrid);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);

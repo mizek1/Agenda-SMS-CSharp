@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="conexaoBanco_Singleton.cs" />
     <Compile Include="Contato.cs" />
+    <Compile Include="ContatoBuilder.cs" />
     <Compile Include="telaLogin.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -102,6 +102,27 @@ namespace AgendaSMS
             return registros;
         }
 
+        public void insereContato(Contato contato)
+        {
+            OdbcCommand insereContato = new OdbcCommand("INSERT INTO contato (id, id_usuario, nome, aniver, telefone) VALUES (?, ?, ?, ?, ?)", cnDB);
+            
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Id", System.Data.Odbc.OdbcType.Int, 0));
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Id_Usuario", System.Data.Odbc.OdbcType.Int, 0));
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Nome", System.Data.Odbc.OdbcType.VarChar, 40));
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Aniversario", System.Data.Odbc.OdbcType.Date, 0));
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Telefone", System.Data.Odbc.OdbcType.VarChar, 20));
+
+            insereContato.Parameters["Id"].Value = contato.Id;
+            insereContato.Parameters["Id_Usuario"].Value = contato.Id_usuario;
+            insereContato.Parameters["Nome"].Value = contato.Nome;
+            insereContato.Parameters["Aniversario"].Value = contato.Aniversario;
+            insereContato.Parameters["Telefone"].Value = contato.Telefone;
+
+            insereContato.ExecuteNonQuery();
+
+            insereContato.Dispose();
+        }
+
     }
 }
 
