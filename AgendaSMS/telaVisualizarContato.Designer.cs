@@ -85,10 +85,11 @@
             this.btnSair.Location = new System.Drawing.Point(456, 218);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(52, 23);
-            this.btnSair.TabIndex = 6;
-            this.btnSair.Text = "Sair";
+            this.btnSair.TabIndex = 8;
+            this.btnSair.Text = "&Sair";
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnAbrirHistorico
             // 
@@ -98,7 +99,7 @@
             this.btnAbrirHistorico.Name = "btnAbrirHistorico";
             this.btnAbrirHistorico.Size = new System.Drawing.Size(102, 23);
             this.btnAbrirHistorico.TabIndex = 7;
-            this.btnAbrirHistorico.Text = "Abrir histórico";
+            this.btnAbrirHistorico.Text = "Abrir &histórico";
             this.btnAbrirHistorico.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAbrirHistorico.UseVisualStyleBackColor = true;
             // 
@@ -110,8 +111,8 @@
             this.btnAbrirConversa.Location = new System.Drawing.Point(236, 218);
             this.btnAbrirConversa.Name = "btnAbrirConversa";
             this.btnAbrirConversa.Size = new System.Drawing.Size(106, 23);
-            this.btnAbrirConversa.TabIndex = 8;
-            this.btnAbrirConversa.Text = "Abrir conversa";
+            this.btnAbrirConversa.TabIndex = 6;
+            this.btnAbrirConversa.Text = "Abrir &conversa";
             this.btnAbrirConversa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAbrirConversa.UseVisualStyleBackColor = true;
             // 
@@ -127,8 +128,10 @@
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "telaVisualizarContato";
             this.Text = "Visualizar contato";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.telaVisualizarContato_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

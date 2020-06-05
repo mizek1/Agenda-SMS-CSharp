@@ -120,8 +120,19 @@ namespace AgendaSMS
             insereContato.Parameters["Telefone"].Value = contato.Telefone;
 
             insereContato.ExecuteNonQuery();
-
             insereContato.Dispose();
+
+            getContatosUsuario(usuario.Id);
+        }
+
+        public void removerContato(int id_contato)
+        {
+            OdbcCommand removeContato = new OdbcCommand("DELETE FROM contato WHERE id = ?", cnDB);
+            removeContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Id", System.Data.Odbc.OdbcType.Int, 0));
+            removeContato.Parameters["Id"].Value = id_contato;
+            removeContato.ExecuteNonQuery();
+            removeContato.Dispose();
+            getContatosUsuario(usuario.Id);
         }
 
     }

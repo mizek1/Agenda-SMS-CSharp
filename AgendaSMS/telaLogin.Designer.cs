@@ -101,7 +101,7 @@
             this.button_Sair.Name = "button_Sair";
             this.button_Sair.Size = new System.Drawing.Size(99, 27);
             this.button_Sair.TabIndex = 5;
-            this.button_Sair.Text = "Sair";
+            this.button_Sair.Text = "&Sair";
             this.button_Sair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_Sair.UseVisualStyleBackColor = true;
             this.button_Sair.Click += new System.EventHandler(this.button_Sair_Click);
@@ -116,7 +116,7 @@
             this.button_Acessar.Name = "button_Acessar";
             this.button_Acessar.Size = new System.Drawing.Size(100, 27);
             this.button_Acessar.TabIndex = 4;
-            this.button_Acessar.Text = "Acessar";
+            this.button_Acessar.Text = "&Acessar";
             this.button_Acessar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_Acessar.UseVisualStyleBackColor = true;
             this.button_Acessar.Click += new System.EventHandler(this.button_Acessar_Click);

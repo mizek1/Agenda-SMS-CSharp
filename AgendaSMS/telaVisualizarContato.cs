@@ -22,5 +22,18 @@ namespace AgendaSMS
             txtAniversario.Text = contato.Aniversario;
         }
 
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void telaVisualizarContato_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
     }
 }

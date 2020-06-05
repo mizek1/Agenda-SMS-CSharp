@@ -44,10 +44,11 @@
             this.btnDescartar.Location = new System.Drawing.Point(430, 217);
             this.btnDescartar.Name = "btnDescartar";
             this.btnDescartar.Size = new System.Drawing.Size(79, 23);
-            this.btnDescartar.TabIndex = 11;
-            this.btnDescartar.Text = "Descartar";
+            this.btnDescartar.TabIndex = 12;
+            this.btnDescartar.Text = "&Descartar";
             this.btnDescartar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDescartar.UseVisualStyleBackColor = true;
+            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
             // 
             // txtAniversario
             // 
@@ -93,8 +94,8 @@
             this.btnSalvar.Location = new System.Drawing.Point(350, 217);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(65, 23);
-            this.btnSalvar.TabIndex = 12;
-            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TabIndex = 11;
+            this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -110,8 +111,10 @@
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "telaNovoContato";
             this.Text = "Novo contato";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.telaNovoContato_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

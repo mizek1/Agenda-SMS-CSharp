@@ -43,5 +43,19 @@ namespace AgendaSMS
                 MessageBox.Show("Campos vazios!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void telaNovoContato_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
     }
 }

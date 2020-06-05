@@ -67,7 +67,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(521, 24);
-            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // contatosToolStripMenuItem
@@ -84,30 +84,30 @@
             // novoContatoToolStripMenuItem
             // 
             this.novoContatoToolStripMenuItem.Name = "novoContatoToolStripMenuItem";
-            this.novoContatoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.novoContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoContatoToolStripMenuItem.Text = "Novo contato";
-            this.novoContatoToolStripMenuItem.Click += new System.EventHandler(this.novoContatoToolStripMenuItem_Click);
+            this.novoContatoToolStripMenuItem.Click += new System.EventHandler(this.btnNovoContato_Click);
             // 
             // listarContatosToolStripMenuItem
             // 
             this.listarContatosToolStripMenuItem.Name = "listarContatosToolStripMenuItem";
-            this.listarContatosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.listarContatosToolStripMenuItem.Text = "Listar contatos";
-            this.listarContatosToolStripMenuItem.Click += new System.EventHandler(this.listarContatosToolStripMenuItem_Click);
+            this.listarContatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarContatosToolStripMenuItem.Text = "Visualizar contato";
+            this.listarContatosToolStripMenuItem.Click += new System.EventHandler(this.btnVisualizarContato_Click);
             // 
             // alterarContatoToolStripMenuItem
             // 
             this.alterarContatoToolStripMenuItem.Name = "alterarContatoToolStripMenuItem";
-            this.alterarContatoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.alterarContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alterarContatoToolStripMenuItem.Text = "Alterar contato";
-            this.alterarContatoToolStripMenuItem.Click += new System.EventHandler(this.alterarContatoToolStripMenuItem_Click);
+            this.alterarContatoToolStripMenuItem.Click += new System.EventHandler(this.btnAlterarContato_Click);
             // 
             // excluirContatoToolStripMenuItem
             // 
             this.excluirContatoToolStripMenuItem.Name = "excluirContatoToolStripMenuItem";
-            this.excluirContatoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.excluirContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.excluirContatoToolStripMenuItem.Text = "Excluir contato";
-            this.excluirContatoToolStripMenuItem.Click += new System.EventHandler(this.excluirContatoToolStripMenuItem_Click);
+            this.excluirContatoToolStripMenuItem.Click += new System.EventHandler(this.btnRemoverContato_Click);
             // 
             // conversasToolStripMenuItem
             // 
@@ -181,7 +181,8 @@
             this.dGrid.ReadOnly = true;
             this.dGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGrid.Size = new System.Drawing.Size(521, 206);
-            this.dGrid.TabIndex = 9;
+            this.dGrid.TabIndex = 2;
+            this.dGrid.DoubleClick += new System.EventHandler(this.btnVisualizarContato_Click);
             // 
             // panel1
             // 
@@ -196,7 +197,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(521, 87);
-            this.panel1.TabIndex = 10;
+            this.panel1.TabIndex = 0;
             // 
             // btnBuscarContato
             // 
@@ -205,8 +206,8 @@
             this.btnBuscarContato.Location = new System.Drawing.Point(445, 52);
             this.btnBuscarContato.Name = "btnBuscarContato";
             this.btnBuscarContato.Size = new System.Drawing.Size(65, 23);
-            this.btnBuscarContato.TabIndex = 14;
-            this.btnBuscarContato.Text = "Buscar";
+            this.btnBuscarContato.TabIndex = 1;
+            this.btnBuscarContato.Text = "&Buscar";
             this.btnBuscarContato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarContato.UseVisualStyleBackColor = true;
             this.btnBuscarContato.Click += new System.EventHandler(this.btnBuscarContato_Click);
@@ -216,7 +217,7 @@
             this.txtBusca.Location = new System.Drawing.Point(20, 55);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(419, 20);
-            this.txtBusca.TabIndex = 13;
+            this.txtBusca.TabIndex = 0;
             // 
             // btnVisualizarContato
             // 
@@ -225,8 +226,8 @@
             this.btnVisualizarContato.Location = new System.Drawing.Point(208, 16);
             this.btnVisualizarContato.Name = "btnVisualizarContato";
             this.btnVisualizarContato.Size = new System.Drawing.Size(78, 23);
-            this.btnVisualizarContato.TabIndex = 12;
-            this.btnVisualizarContato.Text = "Visualizar";
+            this.btnVisualizarContato.TabIndex = 2;
+            this.btnVisualizarContato.Text = "&Visualizar";
             this.btnVisualizarContato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVisualizarContato.UseVisualStyleBackColor = true;
             this.btnVisualizarContato.Click += new System.EventHandler(this.btnVisualizarContato_Click);
@@ -238,11 +239,11 @@
             this.button1.Location = new System.Drawing.Point(294, 16);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(62, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Novo";
+            this.button1.TabIndex = 3;
+            this.button1.Text = "&Novo";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnNovoContato_Click);
             // 
             // btnAlterarContato
             // 
@@ -251,10 +252,11 @@
             this.btnAlterarContato.Location = new System.Drawing.Point(364, 16);
             this.btnAlterarContato.Name = "btnAlterarContato";
             this.btnAlterarContato.Size = new System.Drawing.Size(63, 23);
-            this.btnAlterarContato.TabIndex = 10;
-            this.btnAlterarContato.Text = "Alterar";
+            this.btnAlterarContato.TabIndex = 4;
+            this.btnAlterarContato.Text = "&Alterar";
             this.btnAlterarContato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterarContato.UseVisualStyleBackColor = true;
+            this.btnAlterarContato.Click += new System.EventHandler(this.btnAlterarContato_Click);
             // 
             // btnRemoverContato
             // 
@@ -263,10 +265,11 @@
             this.btnRemoverContato.Location = new System.Drawing.Point(435, 16);
             this.btnRemoverContato.Name = "btnRemoverContato";
             this.btnRemoverContato.Size = new System.Drawing.Size(75, 23);
-            this.btnRemoverContato.TabIndex = 9;
-            this.btnRemoverContato.Text = "Remover";
+            this.btnRemoverContato.TabIndex = 5;
+            this.btnRemoverContato.Text = "&Remover";
             this.btnRemoverContato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRemoverContato.UseVisualStyleBackColor = true;
+            this.btnRemoverContato.Click += new System.EventHandler(this.btnRemoverContato_Click);
             // 
             // label1
             // 
@@ -286,9 +289,11 @@
             this.Controls.Add(this.dGrid);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.KeyPreview = true;
             this.Name = "telaContatos";
             this.Text = "Contatos";
             this.Load += new System.EventHandler(this.telaContatos_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.telaContatos_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGrid)).EndInit();
