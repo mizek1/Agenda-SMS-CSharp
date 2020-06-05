@@ -85,6 +85,7 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnDescartar
             // 
@@ -97,6 +98,7 @@
             this.btnDescartar.Text = "Descartar";
             this.btnDescartar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDescartar.UseVisualStyleBackColor = true;
+            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
             // 
             // telaAlterarContato
             // 

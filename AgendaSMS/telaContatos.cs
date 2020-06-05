@@ -99,20 +99,18 @@ namespace AgendaSMS
 
         private void btnAlterarContato_Click(object sender, EventArgs e)
         {
-/*
- *int indexLinha = linhaAtual();
+            int indexLinha = linhaAtual();
 
-            Contato visualizaContato;
-            visualizaContato = new Contato.Builder()
+            Contato alteraContato;
+            alteraContato = new Contato.Builder()
                 .setIdUsuario(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[1].Value))
                 .setNome(Convert.ToString(dGrid.Rows[indexLinha].Cells[2].Value))
                 .setAniversario(Convert.ToString(dGrid.Rows[indexLinha].Cells[4].Value))
                 .setTelefone(Convert.ToString(dGrid.Rows[indexLinha].Cells[3].Value))
                 .criaContato();
 
-            telaVisualizarContato telaVisualizarContato = new telaVisualizarContato(visualizaContato);
-            telaVisualizarContato.ShowDialog();
-*/
+            telaAlterarContato telaAlterarContato = new telaAlterarContato(alteraContato);
+            telaAlterarContato.ShowDialog();
         }
         private void btnRemoverContato_Click(object sender, EventArgs e)
         {
