@@ -53,6 +53,7 @@
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtNome.Location = new System.Drawing.Point(17, 87);
             this.txtNome.Name = "txtNome";
+            this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(491, 20);
             this.txtNome.TabIndex = 3;
             this.txtNome.Text = "Nome";
@@ -62,6 +63,7 @@
             this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTelefone.Location = new System.Drawing.Point(17, 125);
             this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.ReadOnly = true;
             this.txtTelefone.Size = new System.Drawing.Size(491, 20);
             this.txtTelefone.TabIndex = 4;
             this.txtTelefone.Text = "Telefone";
@@ -69,8 +71,9 @@
             // txtAniversario
             // 
             this.txtAniversario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtAniversario.Location = new System.Drawing.Point(17, 163);
+            this.txtAniversario.Location = new System.Drawing.Point(17, 161);
             this.txtAniversario.Name = "txtAniversario";
+            this.txtAniversario.ReadOnly = true;
             this.txtAniversario.Size = new System.Drawing.Size(491, 20);
             this.txtAniversario.TabIndex = 5;
             this.txtAniversario.Text = "Aniversário";

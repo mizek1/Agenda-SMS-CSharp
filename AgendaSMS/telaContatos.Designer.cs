@@ -176,8 +176,10 @@
             this.dGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dGrid.Location = new System.Drawing.Point(0, 119);
+            this.dGrid.MultiSelect = false;
             this.dGrid.Name = "dGrid";
             this.dGrid.ReadOnly = true;
+            this.dGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGrid.Size = new System.Drawing.Size(521, 206);
             this.dGrid.TabIndex = 9;
             // 
@@ -280,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 330);
+            this.ClientSize = new System.Drawing.Size(521, 332);
             this.Controls.Add(this.dGrid);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);

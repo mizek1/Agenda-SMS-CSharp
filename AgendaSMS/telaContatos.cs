@@ -19,6 +19,11 @@ namespace AgendaSMS
             InitializeComponent();
         }
 
+        public telaContatos getInstance()
+        {
+            return this;
+        }
+
         private void telaContatos_Load(object sender, EventArgs e)
         {
             dGrid.DataSource = conexao.getDtContatos();
@@ -32,6 +37,7 @@ namespace AgendaSMS
 
         private void listarContatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            conexao.getContatosUsuario(usuario.Id);
             dGrid.DataSource = conexao.getDtContatos();
         }
 
@@ -75,7 +81,20 @@ namespace AgendaSMS
 
         private void btnVisualizarContato_Click(object sender, EventArgs e)
         {
-            
+            DataGridViewRow linhaAtual = dGrid.CurrentRow;
+            int indexLinha = linhaAtual.Index;
+
+            Contato visualizaContato;
+            visualizaContato = new Contato.Builder()
+                .setIdUsuario(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[1].Value))
+                .setNome(Convert.ToString(dGrid.Rows[indexLinha].Cells[2].Value))
+                .setAniversario(Convert.ToString(dGrid.Rows[indexLinha].Cells[4].Value))
+                .setTelefone(Convert.ToString(dGrid.Rows[indexLinha].Cells[3].Value))
+                .criaContato();
+
+            telaVisualizarContato telaVisualizarContato = new telaVisualizarContato(visualizaContato);
+            telaVisualizarContato.ShowDialog();
+                    
         }
 
         private void btnBuscarContato_Click(object sender, EventArgs e)

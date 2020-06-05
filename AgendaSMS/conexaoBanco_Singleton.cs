@@ -82,7 +82,8 @@ namespace AgendaSMS
             param1.DbType = DbType.String;
             param1.Value = usuario.Id;
             adDB.SelectCommand.Parameters.Add(param1);
-            
+
+            dtContatos = new DataTable();
             adDB.Fill(dtContatos);
 
             adDB.Dispose();
