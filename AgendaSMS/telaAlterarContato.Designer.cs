@@ -111,8 +111,10 @@
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "telaAlterarContato";
             this.Text = "Alterar contato";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.telaAlterarContato_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
