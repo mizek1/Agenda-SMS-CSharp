@@ -19,30 +19,26 @@ namespace AgendaSMS
             InitializeComponent();
         }
 
+        public telaContatos getInstance()
+        {
+            return this;
+        }
+
         private void telaContatos_Load(object sender, EventArgs e)
         {
             dGrid.DataSource = conexao.getDtContatos();
+            formatarGrid();
         }
 
-        private void novoContatoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void formatarGrid()
         {
-            telaNovoContato telaNovoContato = new telaNovoContato();
-            telaNovoContato.ShowDialog();
-        }
-
-        private void listarContatosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Não chama nada pois já está na tela da lista de contatos
-        }
-
-        private void alterarContatoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Não chama nada pois necessário selecionar um contato para alterar
-        }
-
-        private void excluirContatoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Não chama nada pois necessário selecionar um contato para remover
+            dGrid.Columns["id_contato"].Visible = false;
+            dGrid.Columns["id_usuario"].Visible = false;
+            dGrid.Columns["nome"].HeaderText = "Contato";
+            dGrid.Columns["telefone"].HeaderText = "Telefone";
+            dGrid.Columns["aniver"].HeaderText = "Aniversário";
+            dGrid.Columns["aniver"].DefaultCellStyle.Alignment = 
+                DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void novaConversaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,14 +69,86 @@ namespace AgendaSMS
             telaUsuario.ShowDialog();
         }
 
-        private void btnVisualizarContato_Click(object sender, EventArgs e)
+        private int linhaAtual()
         {
-            
+            DataGridViewRow linhaAtual = dGrid.CurrentRow;
+            return linhaAtual.Index;
         }
 
+        private void btnVisualizarContato_Click(object sender, EventArgs e)
+        {
+            int indexLinha = linhaAtual();
+
+            Contato visualizaContato;
+            visualizaContato = new Contato.Builder()
+                .setId(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[0].Value))
+                .setIdUsuario(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[1].Value))
+                .setNome(Convert.ToString(dGrid.Rows[indexLinha].Cells[2].Value))
+                .setAniversario(Convert.ToString(dGrid.Rows[indexLinha].Cells[4].Value))
+                .setTelefone(Convert.ToString(dGrid.Rows[indexLinha].Cells[3].Value))
+                .criaContato();
+
+            telaVisualizarContato telaVisualizarContato = new telaVisualizarContato(visualizaContato);
+            telaVisualizarContato.ShowDialog();
+        }
+
+        private void btnNovoContato_Click(object sender, EventArgs e)
+        {
+            telaNovoContato telaNovoContato = new telaNovoContato();
+            telaNovoContato.ShowDialog();
+        }
+
+        private void btnAlterarContato_Click(object sender, EventArgs e)
+        {
+            int indexLinha = linhaAtual();
+
+            Contato alteraContato;
+            alteraContato = new Contato.Builder()
+                .setId(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[0].Value))
+                .setIdUsuario(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[1].Value))
+                .setNome(Convert.ToString(dGrid.Rows[indexLinha].Cells[2].Value))
+                .setAniversario(Convert.ToString(dGrid.Rows[indexLinha].Cells[4].Value))
+                .setTelefone(Convert.ToString(dGrid.Rows[indexLinha].Cells[3].Value))
+                .criaContato();
+
+            telaAlterarContato telaAlterarContato = new telaAlterarContato(alteraContato);
+            telaAlterarContato.ShowDialog();
+        }
+        private void btnRemoverContato_Click(object sender, EventArgs e)
+        {
+            int indexLinha = linhaAtual();
+            String mensagem = "Confirma remoção do contato?\n" +
+                Convert.ToString(dGrid.Rows[indexLinha].Cells[2].Value) + "\n" +
+                Convert.ToString(dGrid.Rows[indexLinha].Cells[3].Value) + "\n" +
+                Convert.ToString(dGrid.Rows[indexLinha].Cells[4].Value).Substring(0,10);
+
+            if (MessageBox.Show(mensagem, 
+                "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                System.Windows.Forms.DialogResult.Yes)
+            {
+                conexao.removerContato(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[0].Value));
+                
+                dGrid.DataSource = conexao.getDtContatos();
+            }
+        }
         private void btnBuscarContato_Click(object sender, EventArgs e)
         {
 
+        }      
+
+        private void telaContatos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            dGrid.DataSource = conexao.getDtContatos();
+            formatarGrid();
         }
     }
 }

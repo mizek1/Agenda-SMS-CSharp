@@ -82,7 +82,8 @@ namespace AgendaSMS
             param1.DbType = DbType.String;
             param1.Value = usuario.Id;
             adDB.SelectCommand.Parameters.Add(param1);
-            
+
+            dtContatos = new DataTable();
             adDB.Fill(dtContatos);
 
             adDB.Dispose();
@@ -100,6 +101,58 @@ namespace AgendaSMS
             int registros = dsDB.Tables[0].Rows.Count;
             adDB.Dispose();
             return registros;
+        }
+
+        public void insereContato(Contato contato)
+        {
+            OdbcCommand insereContato = new OdbcCommand("INSERT INTO contato (id, id_usuario, nome, aniver, telefone) VALUES (?, ?, ?, ?, ?)", cnDB);
+            
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Id", System.Data.Odbc.OdbcType.Int, 0));
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Id_Usuario", System.Data.Odbc.OdbcType.Int, 0));
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Nome", System.Data.Odbc.OdbcType.VarChar, 40));
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Aniversario", System.Data.Odbc.OdbcType.Date, 0));
+            insereContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Telefone", System.Data.Odbc.OdbcType.VarChar, 20));
+
+            insereContato.Parameters["Id"].Value = contato.Id;
+            insereContato.Parameters["Id_Usuario"].Value = contato.Id_usuario;
+            insereContato.Parameters["Nome"].Value = contato.Nome;
+            insereContato.Parameters["Aniversario"].Value = contato.Aniversario;
+            insereContato.Parameters["Telefone"].Value = contato.Telefone;
+
+            insereContato.ExecuteNonQuery();
+            insereContato.Dispose();
+
+            getContatosUsuario(usuario.Id);
+        }
+
+        public void atualizaContato(Contato contato)
+        {
+            OdbcCommand atualizaContato = new OdbcCommand("UPDATE contato set nome = ?, aniver = ?, telefone = ? WHERE id = ?", cnDB);
+
+            atualizaContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Nome", System.Data.Odbc.OdbcType.VarChar, 40));
+            atualizaContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Aniversario", System.Data.Odbc.OdbcType.Date, 0));
+            atualizaContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Telefone", System.Data.Odbc.OdbcType.VarChar, 20));
+            atualizaContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Id", System.Data.Odbc.OdbcType.Int, 0));
+
+            atualizaContato.Parameters["Nome"].Value = contato.Nome;
+            atualizaContato.Parameters["Aniversario"].Value = contato.Aniversario;
+            atualizaContato.Parameters["Telefone"].Value = contato.Telefone;
+            atualizaContato.Parameters["Id"].Value = contato.Id;
+
+            atualizaContato.ExecuteNonQuery();
+            atualizaContato.Dispose();
+
+            getContatosUsuario(usuario.Id);
+        }
+
+        public void removerContato(int id_contato)
+        {
+            OdbcCommand removeContato = new OdbcCommand("DELETE FROM contato WHERE id = ?", cnDB);
+            removeContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Id", System.Data.Odbc.OdbcType.Int, 0));
+            removeContato.Parameters["Id"].Value = id_contato;
+            removeContato.ExecuteNonQuery();
+            removeContato.Dispose();
+            getContatosUsuario(usuario.Id);
         }
 
     }

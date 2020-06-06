@@ -18,21 +18,78 @@ namespace AgendaSMS
         private String aniversario;
         private String telefone;
 
-        public Contato(int id, int id_usuario, string nome, string aniversario, string telefone)
+        private Contato(Builder builder)
         {
-            this.id = id;
-            this.id_usuario = id_usuario;
-            this.nome = nome;
-            this.aniversario = aniversario;
-            this.telefone = telefone;
+            this.id = builder.Id;
+            this.id_usuario = builder.Id_usuario;
+            this.nome = builder.Nome;
+            this.aniversario = builder.Aniversario;
+            this.telefone = builder.Telefone;
         }
 
-        public int Id { get => id; set => id = value; }
-        public int Id_usuario { get => id_usuario; set => id_usuario = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public string Aniversario { get => aniversario; set => aniversario = value; }
-        public string Telefone { get => telefone; set => telefone = value; }
+        public void insereContatoBanco()
+        {
+            conexao.insereContato(this);
+        }
 
+        public void atualizaContatoBanco()
+        {
+            conexao.atualizaContato(this);
+        }
 
+        public class Builder : IContatoBuilder<Builder, Contato>
+        {
+            private int id_usuario;
+            private int id;
+            private String nome;
+            private String aniversario;
+            private String telefone;
+            public Contato criaContato()
+            {
+                return new Contato(this);
+            }
+
+            public Builder setId(int id)
+            {
+                this.id = id;
+                return this;
+            }
+
+            public Builder setAniversario(string aniversario)
+            {
+                this.aniversario = aniversario;
+                return this;
+                    
+            }
+
+            public Builder setIdUsuario(int idUsuario)
+            {
+                this.id_usuario = idUsuario;
+                return this;
+            }
+
+            public Builder setNome(string nome)
+            {
+                this.nome = nome;
+                return this;
+            }
+
+            public Builder setTelefone(string telefone)
+            {
+                this.telefone = telefone;
+                return this;
+            }
+            public int Id { get => id; }
+            public int Id_usuario { get => id_usuario; }
+            public string Nome { get => nome; }
+            public string Aniversario { get => aniversario; }
+            public string Telefone { get => telefone; }
+        } 
+        public int Id { get => id; }
+        public int Id_usuario { get => id_usuario; }
+        public string Nome { get => nome; }
+        public string Aniversario { get => aniversario; }
+        public string Telefone { get => telefone; }
     }
+    
 }

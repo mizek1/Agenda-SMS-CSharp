@@ -81,10 +81,11 @@
             this.btnSalvar.Location = new System.Drawing.Point(350, 221);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(65, 23);
-            this.btnSalvar.TabIndex = 18;
+            this.btnSalvar.TabIndex = 17;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnDescartar
             // 
@@ -93,12 +94,13 @@
             this.btnDescartar.Location = new System.Drawing.Point(430, 221);
             this.btnDescartar.Name = "btnDescartar";
             this.btnDescartar.Size = new System.Drawing.Size(79, 23);
-            this.btnDescartar.TabIndex = 17;
+            this.btnDescartar.TabIndex = 18;
             this.btnDescartar.Text = "Descartar";
             this.btnDescartar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDescartar.UseVisualStyleBackColor = true;
+            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
             // 
-            // Form2
+            // telaAlterarContato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,8 +111,10 @@
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.KeyPreview = true;
+            this.Name = "telaAlterarContato";
             this.Text = "Alterar contato";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.telaAlterarContato_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
