@@ -81,6 +81,7 @@ namespace AgendaSMS
 
             Contato visualizaContato;
             visualizaContato = new Contato.Builder()
+                .setId(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[0].Value))
                 .setIdUsuario(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[1].Value))
                 .setNome(Convert.ToString(dGrid.Rows[indexLinha].Cells[2].Value))
                 .setAniversario(Convert.ToString(dGrid.Rows[indexLinha].Cells[4].Value))
@@ -103,6 +104,7 @@ namespace AgendaSMS
 
             Contato alteraContato;
             alteraContato = new Contato.Builder()
+                .setId(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[0].Value))
                 .setIdUsuario(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[1].Value))
                 .setNome(Convert.ToString(dGrid.Rows[indexLinha].Cells[2].Value))
                 .setAniversario(Convert.ToString(dGrid.Rows[indexLinha].Cells[4].Value))
@@ -132,7 +134,7 @@ namespace AgendaSMS
         private void btnBuscarContato_Click(object sender, EventArgs e)
         {
 
-        }
+        }      
 
         private void telaContatos_KeyDown(object sender, KeyEventArgs e)
         {
@@ -141,6 +143,12 @@ namespace AgendaSMS
                 e.SuppressKeyPress = true;
                 SelectNextControl(ActiveControl, true, true, true, true);
             }
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            dGrid.DataSource = conexao.getDtContatos();
+            formatarGrid();
         }
     }
 }
