@@ -34,17 +34,14 @@ namespace AgendaSMS
                 if (Convert.ToDateTime(txtAniversario.Text) > Convert.ToDateTime("01/01/1950")
                     && Convert.ToDateTime(txtAniversario.Text) < DateTime.Now)
                 {
-                    /*
-                     *Contato novoContato = new Contato.Builder()
+                     Contato atualizaContato = new Contato.Builder()
                                         .setIdUsuario(usuario_Singleton.getInstance().Id)
                                         .setNome(txtNome.Text)
                                         .setAniversario(txtAniversario.Text)
                                         .setTelefone(txtTelefone.Text)
                                         .criaContato();
-                                        novoContato.insereContatoBanco();
+                    atualizaContato.atualizaContatoBanco();
                     MessageBox.Show("Contato atualizado!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    */
-                    MessageBox.Show("Falta fazer, fui dormir :D", "Quase!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Hide();
                 }
                 else

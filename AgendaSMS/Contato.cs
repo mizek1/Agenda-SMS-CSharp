@@ -32,6 +32,11 @@ namespace AgendaSMS
             conexao.insereContato(this);
         }
 
+        public void atualizaContatoBanco()
+        {
+            conexao.atualizaContato(this);
+        }
+
         public class Builder : IContatoBuilder<Builder, Contato>
         {
             int id_usuario;

@@ -125,6 +125,26 @@ namespace AgendaSMS
             getContatosUsuario(usuario.Id);
         }
 
+        public void atualizaContato(Contato contato)
+        {
+            OdbcCommand atualizaContato = new OdbcCommand("UPDATE contato set nome = ?, aniver = ?, telefone = ? WHERE id = ?", cnDB);
+
+            atualizaContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Nome", System.Data.Odbc.OdbcType.VarChar, 40));
+            atualizaContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Aniversario", System.Data.Odbc.OdbcType.Date, 0));
+            atualizaContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Telefone", System.Data.Odbc.OdbcType.VarChar, 20));
+            atualizaContato.Parameters.Add(new System.Data.Odbc.OdbcParameter("Id", System.Data.Odbc.OdbcType.Int, 0));
+
+            atualizaContato.Parameters["Nome"].Value = contato.Nome;
+            atualizaContato.Parameters["Aniversario"].Value = contato.Aniversario;
+            atualizaContato.Parameters["Telefone"].Value = contato.Telefone;
+            atualizaContato.Parameters["Id"].Value = contato.Id;
+
+            atualizaContato.ExecuteNonQuery();
+            atualizaContato.Dispose();
+
+            getContatosUsuario(usuario.Id);
+        }
+
         public void removerContato(int id_contato)
         {
             OdbcCommand removeContato = new OdbcCommand("DELETE FROM contato WHERE id = ?", cnDB);
