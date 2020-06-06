@@ -25,6 +25,7 @@ namespace AgendaSMS
                     && Convert.ToDateTime(txtAniversario.Text) < DateTime.Now)
                 {
                     Contato novoContato = new Contato.Builder()
+                    .setId(0)
                     .setIdUsuario(usuario_Singleton.getInstance().Id)
                     .setNome(txtNome.Text)
                     .setAniversario(txtAniversario.Text)

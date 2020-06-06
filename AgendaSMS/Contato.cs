@@ -20,7 +20,7 @@ namespace AgendaSMS
 
         private Contato(Builder builder)
         {
-            this.id = 0;
+            this.id = builder.Id;
             this.id_usuario = builder.Id_usuario;
             this.nome = builder.Nome;
             this.aniversario = builder.Aniversario;
@@ -39,13 +39,20 @@ namespace AgendaSMS
 
         public class Builder : IContatoBuilder<Builder, Contato>
         {
-            int id_usuario;
+            private int id_usuario;
+            private int id;
             private String nome;
             private String aniversario;
             private String telefone;
             public Contato criaContato()
             {
                 return new Contato(this);
+            }
+
+            public Builder setId(int id)
+            {
+                this.id = id;
+                return this;
             }
 
             public Builder setAniversario(string aniversario)
@@ -72,7 +79,7 @@ namespace AgendaSMS
                 this.telefone = telefone;
                 return this;
             }
-
+            public int Id { get => id; }
             public int Id_usuario { get => id_usuario; }
             public string Nome { get => nome; }
             public string Aniversario { get => aniversario; }

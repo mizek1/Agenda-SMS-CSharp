@@ -52,6 +52,7 @@
             this.btnAlterarContato = new System.Windows.Forms.Button();
             this.btnRemoverContato = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -84,28 +85,28 @@
             // novoContatoToolStripMenuItem
             // 
             this.novoContatoToolStripMenuItem.Name = "novoContatoToolStripMenuItem";
-            this.novoContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoContatoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.novoContatoToolStripMenuItem.Text = "Novo contato";
             this.novoContatoToolStripMenuItem.Click += new System.EventHandler(this.btnNovoContato_Click);
             // 
             // listarContatosToolStripMenuItem
             // 
             this.listarContatosToolStripMenuItem.Name = "listarContatosToolStripMenuItem";
-            this.listarContatosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarContatosToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.listarContatosToolStripMenuItem.Text = "Visualizar contato";
             this.listarContatosToolStripMenuItem.Click += new System.EventHandler(this.btnVisualizarContato_Click);
             // 
             // alterarContatoToolStripMenuItem
             // 
             this.alterarContatoToolStripMenuItem.Name = "alterarContatoToolStripMenuItem";
-            this.alterarContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarContatoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.alterarContatoToolStripMenuItem.Text = "Alterar contato";
             this.alterarContatoToolStripMenuItem.Click += new System.EventHandler(this.btnAlterarContato_Click);
             // 
             // excluirContatoToolStripMenuItem
             // 
             this.excluirContatoToolStripMenuItem.Name = "excluirContatoToolStripMenuItem";
-            this.excluirContatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excluirContatoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.excluirContatoToolStripMenuItem.Text = "Excluir contato";
             this.excluirContatoToolStripMenuItem.Click += new System.EventHandler(this.btnRemoverContato_Click);
             // 
@@ -186,6 +187,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnAtualizar);
             this.panel1.Controls.Add(this.btnBuscarContato);
             this.panel1.Controls.Add(this.txtBusca);
             this.panel1.Controls.Add(this.btnVisualizarContato);
@@ -214,9 +216,9 @@
             // 
             // txtBusca
             // 
-            this.txtBusca.Location = new System.Drawing.Point(20, 55);
+            this.txtBusca.Location = new System.Drawing.Point(208, 55);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(419, 20);
+            this.txtBusca.Size = new System.Drawing.Size(231, 20);
             this.txtBusca.TabIndex = 0;
             // 
             // btnVisualizarContato
@@ -281,6 +283,19 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Contatos";
             // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
+            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAtualizar.Location = new System.Drawing.Point(20, 53);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(78, 23);
+            this.btnAtualizar.TabIndex = 9;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
             // telaContatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,5 +344,6 @@
         private System.Windows.Forms.Button btnAlterarContato;
         private System.Windows.Forms.Button btnRemoverContato;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAtualizar;
     }
 }
