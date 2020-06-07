@@ -76,7 +76,7 @@ namespace AgendaSMS
 
         public void getContatosUsuario(int _id)
         {
-            adDB.SelectCommand = new OdbcCommand("select * from vw_contatos where id_usuario = ?", cnDB);
+            adDB.SelectCommand = new OdbcCommand("select * from vw_contatos where id_usuario = ? order by nome", cnDB);
 
             OdbcParameter param1 = new OdbcParameter();
             param1.DbType = DbType.String;

@@ -19,6 +19,16 @@ namespace AgendaSMS
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Convert.ToDateTime(txtAniversario.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Erro na data, verifique.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (!String.IsNullOrWhiteSpace(txtNome.Text) && !String.IsNullOrWhiteSpace(txtTelefone.Text) && !String.IsNullOrWhiteSpace(txtAniversario.Text))
             {
                 if (Convert.ToDateTime(txtAniversario.Text) > Convert.ToDateTime("01/01/1950") 

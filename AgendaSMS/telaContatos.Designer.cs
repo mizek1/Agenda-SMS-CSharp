@@ -45,6 +45,7 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnBuscarContato = new System.Windows.Forms.Button();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.btnVisualizarContato = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.btnAlterarContato = new System.Windows.Forms.Button();
             this.btnRemoverContato = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAtualizar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -201,6 +201,20 @@
             this.panel1.Size = new System.Drawing.Size(521, 87);
             this.panel1.TabIndex = 0;
             // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
+            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAtualizar.Location = new System.Drawing.Point(20, 53);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(78, 23);
+            this.btnAtualizar.TabIndex = 9;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Visible = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
             // btnBuscarContato
             // 
             this.btnBuscarContato.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarContato.Image")));
@@ -282,19 +296,6 @@
             this.label1.Size = new System.Drawing.Size(117, 32);
             this.label1.TabIndex = 8;
             this.label1.Text = "Contatos";
-            // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
-            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtualizar.Location = new System.Drawing.Point(20, 53);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(78, 23);
-            this.btnAtualizar.TabIndex = 9;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // telaContatos
             // 

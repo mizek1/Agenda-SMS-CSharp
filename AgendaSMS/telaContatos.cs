@@ -26,6 +26,11 @@ namespace AgendaSMS
 
         private void telaContatos_Load(object sender, EventArgs e)
         {
+            atualizarGrid();
+        }
+
+        private void atualizarGrid()
+        {
             dGrid.DataSource = conexao.getDtContatos();
             formatarGrid();
         }
@@ -71,14 +76,29 @@ namespace AgendaSMS
 
         private int linhaAtual()
         {
-            DataGridViewRow linhaAtual = dGrid.CurrentRow;
-            return linhaAtual.Index;
+            int linha = - 1; // considera grid vazio
+
+            if (dGrid.RowCount > 0) // grid não está vazio
+            {
+                linha = 0; // considera índice 0 como padrão
+                if (dGrid.CurrentRow != null) // há uma linha selecionada
+                {
+                    linha = dGrid.CurrentRow.Index; // captura índice da linha selecionada
+                }
+            } else
+            {
+                MessageBox.Show("Tabela está vazia, verifique.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return linha;
         }
 
         private void btnVisualizarContato_Click(object sender, EventArgs e)
         {
             int indexLinha = linhaAtual();
-
+            if (indexLinha < 0 )
+            {
+                return;
+            }
             Contato visualizaContato;
             visualizaContato = new Contato.Builder()
                 .setId(Convert.ToInt32(dGrid.Rows[indexLinha].Cells[0].Value))
@@ -96,11 +116,16 @@ namespace AgendaSMS
         {
             telaNovoContato telaNovoContato = new telaNovoContato();
             telaNovoContato.ShowDialog();
+            atualizarGrid();
         }
 
         private void btnAlterarContato_Click(object sender, EventArgs e)
         {
             int indexLinha = linhaAtual();
+            if (indexLinha < 0)
+            {
+                return;
+            }
 
             Contato alteraContato;
             alteraContato = new Contato.Builder()
@@ -113,10 +138,15 @@ namespace AgendaSMS
 
             telaAlterarContato telaAlterarContato = new telaAlterarContato(alteraContato);
             telaAlterarContato.ShowDialog();
+            atualizarGrid();
         }
         private void btnRemoverContato_Click(object sender, EventArgs e)
         {
             int indexLinha = linhaAtual();
+            if (indexLinha < 0)
+            {
+                return;
+            }
             String mensagem = "Confirma remoção do contato?\n" +
                 Convert.ToString(dGrid.Rows[indexLinha].Cells[2].Value) + "\n" +
                 Convert.ToString(dGrid.Rows[indexLinha].Cells[3].Value) + "\n" +
@@ -147,8 +177,7 @@ namespace AgendaSMS
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            dGrid.DataSource = conexao.getDtContatos();
-            formatarGrid();
+            atualizarGrid();
         }
     }
 }
